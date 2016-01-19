@@ -75,6 +75,8 @@ if ( $IP === false ) {
 	$IP = realpath( '.' ) ?: dirname( __DIR__ );
 }
 
+require_once __DIR__ . '/bootstrap.php';
+
 # Grab profiling functions
 require_once "$IP/includes/profiler/ProfilerFunctions.php";
 
@@ -96,10 +98,6 @@ require_once "$IP/includes/DefaultSettings.php";
 # Load global functions
 require_once "$IP/includes/GlobalFunctions.php";
 
-# Load composer's autoloader if present
-if ( is_readable( "$IP/vendor/autoload.php" ) ) {
-	require_once "$IP/vendor/autoload.php";
-}
 
 # Assert that composer dependencies were successfully loaded
 # Purposely no leading \ due to it breaking HHVM RepoAuthorative mode

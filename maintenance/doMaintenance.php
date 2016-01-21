@@ -43,6 +43,8 @@ if ( !$maintClass || !class_exists( $maintClass ) ) {
 	exit( 1 );
 }
 
+require_once __DIR__ . '/../includes/bootstrap.php';
+
 // Get an object to start us off
 /** @var Maintenance $maintenance */
 $maintenance = new $maintClass();
@@ -69,11 +71,6 @@ if ( file_exists( "$IP/StartProfiler.php" ) ) {
 require_once "$IP/includes/Defines.php";
 require_once "$IP/includes/DefaultSettings.php";
 require_once "$IP/includes/GlobalFunctions.php";
-
-# Load composer's autoloader if present
-if ( is_readable( "$IP/vendor/autoload.php" ) ) {
-	require_once "$IP/vendor/autoload.php";
-}
 
 if ( defined( 'MW_CONFIG_CALLBACK' ) ) {
 	# Use a callback function to configure MediaWiki

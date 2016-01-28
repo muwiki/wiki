@@ -1,6 +1,6 @@
 [submodule "extensions/MathJax"]
 	path = extensions/MathJax
-	url = https://github.com/muwiki/mediawiki-mathjax
+	url = git@github.com:muwiki/mediawiki-mathjax.git
 [submodule "resources/lib/MathJax"]
 	path = resources/lib/MathJax
 	url = git@github.com:mathjax/MathJax.git

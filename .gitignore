@@ -38,7 +38,7 @@ sftp-config.json
 /maintenance/.mwsql_history
 /maintenance/dev/data
 /AdminSettings.php
-/LocalSettings.php
+/config/LocalSettings.php
 /StartProfiler.php
 
 # Building & testing

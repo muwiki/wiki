@@ -151,11 +151,10 @@ wfLoadExtension('MathJax');
 wfLoadExtension('AddCustomFavicon');
 
 
-$wgMainCacheType = CACHE_NONE;
-//$wgMainCacheType = CACHE_MEMCACHED;
-//$wgParserCacheType = CACHE_MEMCACHED; # optional
-$wgMessageCacheType = CACHE_MEMCACHED; # optional
-$wgMemCachedServers = array('127.0.0.1:11211');
+$wgMainCacheType = CACHE_ACCEL;
+//$wgParserCacheType = CACHE_ACCEL; # optional
+$wgMessageCacheType = CACHE_ACCEL; # optional
+//$wgMemCachedServers = array('127.0.0.1:11211');
 
 $wgSessionsInObjectCache = true; # optional
-$wgSessionCacheType = CACHE_MEMCACHED; # optional
+$wgSessionCacheType = CACHE_ACCEL; # optional

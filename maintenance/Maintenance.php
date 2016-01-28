@@ -27,6 +27,8 @@ require_once dirname( __FILE__ ) . '/../includes/PHPVersionCheck.php';
 // @codingStandardsIgnoreEnd
 wfEntryPointCheck( 'cli' );
 
+require_once __DIR__ .'/../bootstrap.php';
+
 /**
  * @defgroup MaintenanceArchive Maintenance archives
  * @ingroup Maintenance

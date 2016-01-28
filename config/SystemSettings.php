@@ -101,11 +101,11 @@ $wgTmpDirectory = __DIR__ . '/../temp';
 # Site language code, should be one of the list in ./languages/Names.php
 $wgLanguageCode = 'cs';
 
-$wgSecretKey = '6c75c2febb5a26087adc468542dbbfc19d5e384f77b2f916600e0aed248d6764';
+$wgSecretKey = false;
 
 # Site upgrade key. Must be set to a string (default provided) to turn on the
 # web installer while LocalSettings.php is in place
-$wgUpgradeKey = '39ccac3ea6396b33';
+$wgUpgradeKey = false;
 
 ## For attaching licensing metadata to pages, and displaying an
 ## appropriate copyright notice / icon. GNU Free Documentation

@@ -16,4 +16,6 @@ if (!defined('MEDIAWIKI')) {
 }
 
 require_once __DIR__ . '/config/SystemSettings.php';
-require_once __DIR__ . '/config/LocalSettings.php';
+if (file_exists($localSettingsFile = __DIR__ . '/config/LocalSettings.php')) {
+    require_once $localSettingsFile;
+}

@@ -21,6 +21,18 @@ if (!defined('MEDIAWIKI')) {
 $wgSitename = 'muwiki';
 $wgMetaNamespace = 'Muwiki';
 
+## Database settings
+$wgDBtype = 'postgres';
+$wgDBserver = getenv('MW_DB_SERVER') ?: '127.0.0.1';
+$wgDBname = getenv('MW_DB_NAME');
+$wgDBuser = getenv('MW_DB_USER');
+$wgDBpassword = getenv('MW_DB_PASSWORD');
+
+# Postgres specific settings
+$wgDBport = getenv('MW_DB_PORT') ?: '5432';
+$wgDBmwschema = getenv('MW_DB_SCHEMA') ?: 'public';
+
+
 ## The URL base path to the directory containing the wiki;
 ## defaults for all runtime URL paths are based off of this.
 ## For more information on customizing the URLs

@@ -110,12 +110,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kdyby/Monolog.git",
-                "reference": "8725de18fa9be6d96628648fb0226a2f4a82b7cb"
+                "reference": "1a8bf7f0f1f91b619d872c53a17d4c2b5e31d6d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Kdyby/Monolog/zipball/8725de18fa9be6d96628648fb0226a2f4a82b7cb",
-                "reference": "8725de18fa9be6d96628648fb0226a2f4a82b7cb",
+                "url": "https://api.github.com/repos/Kdyby/Monolog/zipball/1a8bf7f0f1f91b619d872c53a17d4c2b5e31d6d6",
+                "reference": "1a8bf7f0f1f91b619d872c53a17d4c2b5e31d6d6",
                 "shasum": ""
             },
             "require": {
@@ -187,7 +187,7 @@
                 "monolog",
                 "nette"
             ],
-            "time": "2016-01-20 12:27:44"
+            "time": "2016-01-28 12:07:17"
         },
         {
             "name": "liuggio/statsd-php-client",

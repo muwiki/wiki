@@ -64,7 +64,14 @@
 	"autoload": {
 		"psr-0": {
 			"ComposerHookHandler": "includes/composer"
-		}
+		},
+		"classmap": [
+			"includes",
+			"extensions",
+			"languages",
+			"maintenance",
+			"mw-config"
+		]
 	},
 	"scripts": {
 		"lint": "parallel-lint --exclude vendor",

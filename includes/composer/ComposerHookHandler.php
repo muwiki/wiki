@@ -4,7 +4,6 @@ use Composer\Package\Package;
 use Composer\Script\Event;
 
 $GLOBALS['IP'] = __DIR__ . '/../../';
-require_once __DIR__ . '/../AutoLoader.php';
 
 /**
  * @licence GNU GPL v2+

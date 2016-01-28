@@ -75,13 +75,10 @@ if ( $IP === false ) {
 	$IP = realpath( '.' ) ?: dirname( __DIR__ );
 }
 
-require_once __DIR__ . '/bootstrap.php';
+require_once __DIR__ . '/../bootstrap.php';
 
 # Grab profiling functions
 require_once "$IP/includes/profiler/ProfilerFunctions.php";
-
-# Start the autoloader, so that extensions can derive classes from core files
-require_once "$IP/includes/AutoLoader.php";
 
 # Load up some global defines.
 require_once "$IP/includes/Defines.php";

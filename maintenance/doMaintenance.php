@@ -43,7 +43,7 @@ if ( !$maintClass || !class_exists( $maintClass ) ) {
 	exit( 1 );
 }
 
-require_once __DIR__ . '/../includes/bootstrap.php';
+require_once __DIR__ . '/../bootstrap.php';
 
 // Get an object to start us off
 /** @var Maintenance $maintenance */
@@ -56,8 +56,6 @@ $maintenance->setup();
 // to $maintenance->mSelf. Keep that here for b/c
 $self = $maintenance->getName();
 
-# Start the autoloader, so that extensions can derive classes from core files
-require_once "$IP/includes/AutoLoader.php";
 # Grab profiling functions
 require_once "$IP/includes/profiler/ProfilerFunctions.php";
 

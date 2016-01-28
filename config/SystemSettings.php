@@ -148,6 +148,7 @@ $wgRestrictDisplayTitle = false;
 
 
 wfLoadExtension('MathJax');
+wfLoadExtension('AddCustomFavicon');
 
 
 $wgMainCacheType = CACHE_NONE;

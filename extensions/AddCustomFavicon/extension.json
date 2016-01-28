@@ -1,0 +1,20 @@
+{
+  "name": "AddCustomFavicon",
+  "version": "1.0",
+  "author": [
+    "fprochazka"
+  ],
+  "url": "",
+  "description": "",
+  "license-name": "MIT",
+  "AutoloadClasses": {
+    "AddCustomFavicon": "AddCustomFavicon.php"
+  },
+  "Hooks": {
+    "BeforePageDisplay": [
+      "AddCustomFavicon::wfInsertMeta"
+    ]
+  },
+  "type": "Tag extensions",
+  "manifest_version": 1
+}

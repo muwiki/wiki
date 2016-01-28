@@ -136,7 +136,6 @@ $wgUseETag = TRUE;
 $wgUseGzip = FALSE;
 $wgDisableCounters = true;
 
-# 0 0 * * * /usr/bin/php /home/fprochazka/devel/projects/muwiki.cz/maintenance/runJobs.php > /home/fprochazka/devel/projects/muwiki.cz/logs/runJobs.log 2>&1p
 $wgJobRunRate = 0;
 
 

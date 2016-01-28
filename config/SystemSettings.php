@@ -150,10 +150,11 @@ wfLoadExtension('MathJax');
 wfLoadExtension('AddCustomFavicon');
 
 
-$wgMainCacheType = CACHE_ACCEL;
+$wgObjectCaches['apcu'] = ['class' => 'APCuBagOStuff'];
+$wgMainCacheType = 'apcu';
 //$wgParserCacheType = CACHE_ACCEL; # optional
-$wgMessageCacheType = CACHE_ACCEL; # optional
+$wgMessageCacheType = 'apcu'; # optional
 //$wgMemCachedServers = array('127.0.0.1:11211');
 
 $wgSessionsInObjectCache = true; # optional
-$wgSessionCacheType = CACHE_ACCEL; # optional
+$wgSessionCacheType = CACHE_DB; # optional

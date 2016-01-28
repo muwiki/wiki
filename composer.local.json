@@ -1,6 +1,9 @@
 {
 	"require": {
-		"nette/http": "^2.3"
+		"nette/http": "^2.3",
+		"tracy/tracy": "^2.3",
+		"monolog/monolog": "~1.17",
+		"kdyby/monolog": "@dev"
 	},
 	"autoload": {
 		"classmap": [

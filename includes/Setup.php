@@ -527,7 +527,7 @@ if ( $wgDebugToolbar && !$wgCommandLineMode ) {
 	MWDebug::init();
 }
 
-MWExceptionHandler::installHandler();
+//MWExceptionHandler::installHandler();
 
 require_once "$IP/includes/compat/normal/UtfNormalUtil.php";
 

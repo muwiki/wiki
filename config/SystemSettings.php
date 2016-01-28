@@ -34,7 +34,6 @@ $wgDBpassword = getenv('MW_DB_PASSWORD');
 $wgDBport = getenv('MW_DB_PORT') ?: '5432';
 $wgDBmwschema = getenv('MW_DB_SCHEMA') ?: 'public';
 
-
 ## The URL base path to the directory containing the wiki;
 ## defaults for all runtime URL paths are based off of this.
 ## For more information on customizing the URLs

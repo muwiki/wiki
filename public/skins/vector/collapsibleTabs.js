@@ -1,0 +1,1 @@
+../../../skins/vector/collapsibleTabs.js

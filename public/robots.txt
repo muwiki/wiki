@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /engine/
+Disallow: /w/Special:Search
+Disallow: /w/Special:Random

@@ -10,9 +10,10 @@ call_user_func(function () {
     Debugger::enable(Debugger::PRODUCTION, __DIR__ . '/logs');
 
     $httpRequest = (new RequestFactory())->createHttpRequest();
-    preg_match('~^(?:.*\.)?(?P<domain>\w+\.\w+)$~', $httpRequest->getUrl()->getHost(), $host);
+    if (preg_match('~^(?:.*\.)?(?P<domain>\w+\.\w+)$~', $httpRequest->getUrl()->getHost(), $host)) {
+        session_set_cookie_params(60 * 60 * 24 * 14, '/', '.' . $host['domain']);
+    }
     ini_set('session.save_path', __DIR__ . '/../sessions');
-    session_set_cookie_params(60 * 60 * 24 * 14, '/', '.' . $host['domain']);
 
     $logger = new \Kdyby\Monolog\Logger('mediawiki');
     $logger->pushProcessor(new Kdyby\Monolog\Processor\PriorityProcessor());

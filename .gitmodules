@@ -4,3 +4,6 @@
 [submodule "resources/lib/MathJax"]
 	path = resources/lib/MathJax
 	url = git@github.com:mathjax/MathJax.git
+[submodule "skins/vector"]
+	path = skins/vector
+	url = git@github.com:muwiki/mediawiki-skin-vector.git

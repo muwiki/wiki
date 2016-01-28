@@ -8,4 +8,8 @@ call_user_func(function () {
 
     ini_set('session.save_path', __DIR__ . '/../sessions');
     session_set_cookie_params(60 * 60 * 24 * 14, '/', '.' . $host['domain']);
+
+    // expose globals
+    $GLOBALS['httpRequest'] = $httpRequest;
+    $GLOBALS['IP'] = __DIR__;
 });

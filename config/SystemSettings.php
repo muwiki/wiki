@@ -15,6 +15,8 @@ if (!defined('MEDIAWIKI')) {
     exit;
 }
 
+/** @var \Nette\Http\Request $httpRequest */
+
 ## Uncomment this to disable output compression
 # $wgDisableOutputCompression = true;
 
@@ -48,7 +50,8 @@ foreach (['view', 'edit', 'watch', 'unwatch', 'delete', 'revert', 'rollback', 'p
 $wgArticlePath = $wgActionPaths['view'];
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = 'http://www.muwiki.l';
+$wgServer = $httpRequest->getUrl()->getHostUrl();
+$wgSecureLogin = $httpRequest->isSecured();
 
 ## The URL path to static resources (images, scripts, etc.)
 $wgResourceBasePath = $wgScriptPath;

@@ -7,3 +7,6 @@
 [submodule "skins/vector"]
 	path = skins/vector
 	url = git@github.com:muwiki/mediawiki-skin-vector.git
+[submodule "extensions/GoogleAnalytics"]
+	path = extensions/GoogleAnalytics
+	url = git@github.com:muwiki/mediawiki-extensions-googleAnalytics.git

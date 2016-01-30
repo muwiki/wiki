@@ -64,8 +64,8 @@ $wgLogo = "$wgResourceBasePath/resources/assets/logo_fi_transparent.png";
 $wgEnableEmail = true;
 $wgEnableUserEmail = true; # UPO
 
-$wgEmergencyContact = 'admin@muwiki.l';
-$wgPasswordSender = 'admin@muwiki.l';
+$wgEmergencyContact = 'filip@prochazka.su';
+$wgPasswordSender = 'system@muwiki.cz';
 
 $wgEnotifUserTalk = true; # UPO
 $wgEnotifWatchlist = true; # UPO

@@ -145,6 +145,13 @@ wfLoadSkin($wgDefaultSkin);
 $wgNamespacesWithSubpages = new InfiniteArray(TRUE, $wgNamespacesWithSubpages);
 $wgRestrictDisplayTitle = false;
 
+$wgGoogleAnalyticsIgnoreSpecials = [
+    "Userlogin",
+    "Userlogout",
+    "Preferences",
+    "ChangePassword"
+];
+wfLoadExtension('GoogleAnalytics');
 
 wfLoadExtension('MathJax');
 wfLoadExtension('AddCustomFavicon');

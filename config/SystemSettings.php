@@ -148,6 +148,7 @@ $wgRestrictDisplayTitle = false;
 
 wfLoadExtension('MathJax');
 wfLoadExtension('AddCustomFavicon');
+wfLoadExtension('NetteMail');
 
 
 $wgObjectCaches['apcu'] = ['class' => 'APCuBagOStuff'];

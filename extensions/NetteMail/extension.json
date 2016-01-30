@@ -1,0 +1,18 @@
+{
+    "name": "NetteMail",
+    "version": "1.0",
+    "author": [
+        "fprochazka"
+    ],
+    "url": "",
+    "description": "",
+    "license-name": "MIT",
+    "AutoloadClasses": {
+        "NetteMailHooks": "NetteMailHooks.php"
+    },
+	"Hooks": {
+		"AlternateUserMailer": ["NetteMailHooks::onAlternateUserMailer"]
+	},
+    "type": "Mail extensions",
+	"manifest_version": 1
+}

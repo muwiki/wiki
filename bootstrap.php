@@ -11,7 +11,7 @@ call_user_func(function () {
 
     $httpRequest = (new RequestFactory())->createHttpRequest();
     if (preg_match('~^(?:.*\.)?(?P<domain>\w+\.\w+)$~', $httpRequest->getUrl()->getHost(), $host)) {
-        session_set_cookie_params(60 * 60 * 24 * 14, '/', '.' . $host['domain']);
+        session_set_cookie_params(60 * 60 * 24 * 14, '/', '.' . $host['domain'], TRUE, TRUE);
     }
     ini_set('session.save_path', __DIR__ . '/temp');
 

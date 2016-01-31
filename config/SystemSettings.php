@@ -73,9 +73,21 @@ $wgEmailAuthentication = true;
 
 ## To enable image uploads, make sure the 'images' directory
 ## is writable, then set this to true:
-$wgEnableUploads = false;
+$wgEnableUploads = true;
 #$wgUseImageMagick = true;
 #$wgImageMagickConvertCommand = "/usr/bin/convert";
+#Not for Anonymous
+$wgGroupPermissions['*']['upload'] = false;
+$wgGroupPermissions['*']['reupload'] = false;
+$wgGroupPermissions['*']['reupload-shared'] = false;
+#Uploads (but not re-uploads) for Users
+$wgGroupPermissions['user']['upload'] = true;
+$wgGroupPermissions['user']['reupload'] = false;
+$wgGroupPermissions['user']['reupload-shared'] = false;
+#Sysops
+$wgGroupPermissions['sysop']['upload'] = true;
+$wgGroupPermissions['sysop']['reupload'] = true;
+$wgGroupPermissions['sysop']['reupload-shared'] = true;
 
 # InstantCommons allows wiki to use images from https://commons.wikimedia.org
 $wgUseInstantCommons = false;

@@ -134,19 +134,19 @@ class SpecialVersion extends SpecialPage {
 			default:
 				$out->addModules( 'mediawiki.special.version' );
 				$out->addWikiText(
-					$this->getMediaWikiCredits() .
-					$this->softwareInformation() .
-					$this->getEntryPointInfo()
+					$this->getMediaWikiCredits()
+					// $this->softwareInformation() .
+					// $this->getEntryPointInfo()
 				);
 				$out->addHtml(
 					$this->getSkinCredits() .
-					$this->getExtensionCredits() .
-					$this->getExternalLibraries() .
+					// $this->getExtensionCredits() .
+					// $this->getExternalLibraries() .
 					$this->getParserTags() .
 					$this->getParserFunctionHooks()
 				);
-				$out->addWikiText( $this->getWgHooks() );
-				$out->addHTML( $this->IPInfo() );
+				// $out->addWikiText( $this->getWgHooks() );
+				// $out->addHTML( $this->IPInfo() );
 
 				break;
 		}

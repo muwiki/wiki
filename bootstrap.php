@@ -9,20 +9,34 @@ require_once __DIR__ . '/vendor/autoload.php';
 call_user_func(function () {
     Debugger::enable(Debugger::PRODUCTION, __DIR__ . '/logs');
 
+    $domainRedirects = [
+        'muwiki' => 'fi.muwiki',
+        'www.muwiki' => 'fi.muwiki',
+    ];
+
     $domainWhitelist = [
         'fi.muwiki',
     ];
 
     $httpRequest = (new RequestFactory())->createHttpRequest();
+    $response = new \Nette\Http\Response();
+
     if (preg_match('~^(?:(?P<second>.+)\.)?(?P<first>\w+)\.(?P<tld>\w+)$~', $httpRequest->getUrl()->getHost(), $host)) {
         $host['domain'] = $host['first'] . $host['tld'];
-        $host['withoutTld'] = (isset($host['second']) ? $host['second'] . '.' : '') . $host['first'];
+        $host['withoutTld'] = (!empty($host['second']) ? $host['second'] . '.' : '') . $host['first'];
 
-        if (PHP_SAPI !== 'cli' && !in_array($host['withoutTld'], $domainWhitelist, true)) {
-            $response = new \Nette\Http\Response();
-            $response->setCode($response::S404_NOT_FOUND);
-            require_once __DIR__ . '/public/4xx/404.html';
-            exit;
+        if (PHP_SAPI !== 'cli') {
+            if (array_key_exists($host['withoutTld'], $domainRedirects)) {
+                $url = $httpRequest->getUrl();
+                $url->setHost($domainRedirects[$host['withoutTld']] . '.' . $host['tld']);
+                $response->redirect($url);
+                exit;
+
+            } elseif (!in_array($host['withoutTld'], $domainWhitelist, true)) {
+                $response->setCode($response::S404_NOT_FOUND);
+                require_once __DIR__ . '/public/4xx/404.html';
+                exit;
+            }
         }
 
         session_set_cookie_params(60 * 60 * 24 * 14, '/', '.' . $host['domain'], TRUE, TRUE);

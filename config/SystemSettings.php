@@ -159,6 +159,8 @@ wfLoadSkin($wgDefaultSkin);
 $wgNamespacesWithSubpages = new InfiniteArray(TRUE, $wgNamespacesWithSubpages);
 $wgRestrictDisplayTitle = false;
 
+$wgGoogleAnalyticsIgnoreNsIDs = [];
+$wgGoogleAnalyticsIgnorePages = [];
 $wgGoogleAnalyticsAnonymizeIP = FALSE;
 $wgGoogleAnalyticsIgnoreSpecials = [
     "Userlogin",

@@ -14,7 +14,7 @@ class CustomStyleTags
 			'title' => 'Definice',
 			'class' => 'definition',
 		],
-		'sentence' => [
+		'theorem' => [
 			'title' => 'Věta',
 			'class' => 'sentence',
 		],

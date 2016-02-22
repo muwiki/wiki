@@ -20,6 +20,10 @@ class CustomStyleTags
 		],
 	];
 
+	public static $attrWhitelist = [
+		'title' => true,
+	];
+
 	public static function parserFirstCallInit(Parser $parser)
 	{
 		foreach (self::$tags as $customTag => $meta) {
@@ -36,7 +40,7 @@ class CustomStyleTags
 		// create base tag
 		$el = Html::el((!empty($meta['tag']) ? $meta['tag'] : 'div'))
 			->addAttributes(array_diff_key($meta, ['title' => false, 'tag' => false]))
-			->addAttributes($params);
+			->addAttributes(array_intersect_key($params, self::$attrWhitelist));
 
 		// process title line
 		$title = array_key_exists('title', $el->attrs) ? $el->attrs['title'] : $meta['title'];

@@ -168,6 +168,8 @@ $wgGoogleAnalyticsIgnoreSpecials = [
 ];
 wfLoadExtension('GoogleAnalytics');
 
+wfLoadExtension('CustomStyleTags');
+
 wfLoadExtension('MathJax');
 wfLoadExtension('AddCustomFavicon');
 wfLoadExtension('NetteMail');

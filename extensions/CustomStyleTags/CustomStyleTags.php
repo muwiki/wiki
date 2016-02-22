@@ -20,38 +20,34 @@ class CustomStyleTags
 		],
 	];
 
-	public static function run(Parser $parser)
+	public static function parserFirstCallInit(Parser $parser)
 	{
-		Hooks::register('ParserBeforeStrip', get_called_class() . '::transformTags');
+		foreach (self::$tags as $customTag => $meta) {
+			$parser->setHook(strtolower($customTag), function ($text, array $params, Parser $parser, PPFrame $frame) use ($customTag, $meta) {
+				return self::buildTag($text, $params, $meta);
+			});
+		}
 
 		return true;
 	}
 
-	public static function transformTags(Parser $parser, &$text)
+	private static function buildTag($text, array $params, array $meta)
 	{
-		foreach (self::$tags as $customTag => $meta) {
-			$tag = preg_quote($customTag);
-			// $pattern = '~<' . $customTag . '(?P<attrs>[^>]*)>(?P<content>(?:[^<]*+(?:(?!<' . $customTag . '[^>]*>)|(?R))*+)*+)</' . $customTag . '>~i';
-			$pattern = '~<' . $tag . '(?P<attrs>[^>]*)>(?P<content>.*?)</' . $tag . '>~is';
-			$text = preg_replace_callback($pattern, function (array $m) use ($customTag, $meta) {
-				// create base tag
-				$el = Html::el((!empty($meta['tag']) ? $meta['tag'] : 'div') . ($m['attrs'] !== '' ? ' ' . $m['attrs'] : ''))
-					->addAttributes(array_diff_key($meta, ['title' => false, 'tag' => false]));
+		// create base tag
+		$el = Html::el((!empty($meta['tag']) ? $meta['tag'] : 'div'))
+			->addAttributes(array_diff_key($meta, ['title' => false, 'tag' => false]))
+			->addAttributes($params);
 
-				// process title line
-				$title = array_key_exists('title', $el->attrs) ? $el->attrs['title'] : $meta['title'];
-				unset($el->attrs['title']);
-				$el->add(Html::el('div', ['class' => 'title'])->setText($title));
+		// process title line
+		$title = array_key_exists('title', $el->attrs) ? $el->attrs['title'] : $meta['title'];
+		unset($el->attrs['title']);
+		$el->add(Html::el('div', ['class' => 'title'])->setText($title));
 
-				// process content
-				$el->add(Html::el('div', ['class' => 'content'])->setHtml(trim($m['content'])));
+		// process content
+		$el->add(Html::el('div', ['class' => 'content'])->setHtml(trim($text)));
 
-				// render
-				return (string) $el->addClass('customTag');
-			}, $text);
-		}
-
-		return true;
+		// render
+		return (string) $el->addClass('customTag');
 	}
 
 }

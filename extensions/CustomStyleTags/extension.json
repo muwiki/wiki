@@ -11,7 +11,7 @@
         "CustomStyleTags": "CustomStyleTags.php"
     },
 	"Hooks": {
-		"ParserFirstCallInit": ["CustomStyleTags::run"]
+		"ParserFirstCallInit": ["CustomStyleTags::parserFirstCallInit"]
 	},
     "type": "Tag extensions",
 	"manifest_version": 1

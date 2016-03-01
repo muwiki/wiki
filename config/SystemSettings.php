@@ -179,6 +179,8 @@ wfLoadExtension('NetteMail');
 wfLoadExtension('ImageMap');
 require_once __DIR__ . '/../extensions/GraphViz/GraphViz.php';
 
+wfLoadExtension('Cite');
+
 
 $wgObjectCaches['apcu'] = ['class' => 'APCuBagOStuff'];
 $wgMainCacheType = 'apcu';

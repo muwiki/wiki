@@ -16,3 +16,6 @@
 [submodule "extensions/ImageMap"]
 	path = extensions/ImageMap
 	url = git@github.com:muwiki/mediawiki-extensions-ImageMap.git
+[submodule "extensions/Cite"]
+	path = extensions/Cite
+	url = git@github.com:muwiki/mediawiki-extensions-Cite.git

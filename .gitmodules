@@ -10,3 +10,9 @@
 [submodule "extensions/GoogleAnalytics"]
 	path = extensions/GoogleAnalytics
 	url = git@github.com:muwiki/mediawiki-extensions-googleAnalytics.git
+[submodule "extensions/GraphViz"]
+	path = extensions/GraphViz
+	url = git@github.com:muwiki/mediawiki-extensions-GraphViz.git
+[submodule "extensions/ImageMap"]
+	path = extensions/ImageMap
+	url = git@github.com:muwiki/mediawiki-extensions-ImageMap.git

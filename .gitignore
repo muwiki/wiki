@@ -28,6 +28,7 @@ sftp-config.json
 /images/archive
 /images/cache
 /images/deleted
+/images/graphviz
 /images/lockdir
 /images/temp
 /images/thumb

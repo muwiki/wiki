@@ -176,6 +176,9 @@ wfLoadExtension('MathJax');
 wfLoadExtension('AddCustomFavicon');
 wfLoadExtension('NetteMail');
 
+wfLoadExtension('ImageMap');
+require_once __DIR__ . '/../extensions/GraphViz/GraphViz.php';
+
 
 $wgObjectCaches['apcu'] = ['class' => 'APCuBagOStuff'];
 $wgMainCacheType = 'apcu';

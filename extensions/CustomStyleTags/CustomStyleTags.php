@@ -28,14 +28,14 @@ class CustomStyleTags
 	{
 		foreach (self::$tags as $customTag => $meta) {
 			$parser->setHook(strtolower($customTag), function ($text, array $params, Parser $parser, PPFrame $frame) use ($customTag, $meta) {
-				return self::buildTag($text, $params, $meta);
+				return self::buildTag($text, $params, $meta, $parser, $frame);
 			});
 		}
 
 		return true;
 	}
 
-	private static function buildTag($text, array $params, array $meta)
+	private static function buildTag($text, array $params, array $meta, Parser $parser, PPFrame $frame)
 	{
 		// create base tag
 		$el = Html::el((!empty($meta['tag']) ? $meta['tag'] : 'div'))
@@ -48,6 +48,7 @@ class CustomStyleTags
 		$el->add(Html::el('div', ['class' => 'title'])->setText($title));
 
 		// process content
+		$text = $parser->recursiveTagParse($text, $frame);
 		$el->add(Html::el('div', ['class' => 'content'])->setHtml(trim($text)));
 
 		// render

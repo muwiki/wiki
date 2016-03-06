@@ -78,31 +78,31 @@ class CustomStyleTags
 	{
 		foreach (self::$tags as $customTag => $meta) {
 			$parser->setHook(strtolower($customTag), function ($text, array $params, Parser $parser, PPFrame $frame) use ($customTag, $meta) {
-				return self::buildTag($text, $params, $meta, $parser, $frame);
+				return self::buildTag($text, $params, $customTag, $meta, $parser, $frame);
 			});
 		}
 
 		return true;
 	}
 
-	private static function buildTag($text, array $params, array $meta, Parser $parser, PPFrame $frame)
+	private static function buildTag($text, array $attrs, $customTag, array $meta, Parser $parser, PPFrame $frame)
 	{
 		// create base tag
 		$el = NHtml::el((!empty($meta['tag']) ? $meta['tag'] : 'div'))
 			->addAttributes(array_diff_key($meta, ['title' => false, 'tag' => false]))
-			->addAttributes(array_intersect_key($params, self::$attrWhitelist));
+			->addAttributes(array_intersect_key($attrs, self::$attrWhitelist));
 
 		// custom id
 		$el->addAttributes([
 			'id' => array_key_exists('id', $el->attrs)
-				? sprintf('cst-%s-%s', $el->getName(), NStrings::webalize($el->attrs['id']))
+				? sprintf('cst-%s-%s', $customTag, NStrings::webalize($el->attrs['id']))
 				: false
 		]);
 
 		// process title line
-		$title = array_key_exists('title', $el->attrs) ? $el->attrs['title'] : $meta['title'];
+		$title = $meta['title'] . (array_key_exists('title', $el->attrs) ? (' (' . $el->attrs['title'] . ')') : '') . ': ';
 		unset($el->attrs['title']);
-		$el->add(NHtml::el('span', ['class' => 'title'])->setText($title));
+		$el->add(NHtml::el('span', ['class' => 'title'])->setText(($title)));
 
 		// process content
 		$text = $parser->recursiveTagParse($text, $frame);

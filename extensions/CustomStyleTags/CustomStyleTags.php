@@ -59,6 +59,10 @@ class CustomStyleTags
 			'title' => 'Výsledek',
 			'class' => 'result',
 		],
+		'solution' => [
+			'title' => 'Řešení',
+			'class' => 'result',
+		],
 		'theorem' => [
 			'title' => 'Věta',
 			'class' => 'sentence',

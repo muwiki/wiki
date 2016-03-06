@@ -10,9 +10,53 @@ class CustomStyleTags
 {
 
 	public static $tags = [
+		'assumption' => [
+			'title' => 'Předpoklad',
+			'class' => 'assumption',
+		],
+		'axiom' => [
+			'title' => 'Axiom',
+			'class' => 'axiom',
+		],
+		'conjecture' => [
+			'title' => 'Conjecture',
+			'class' => 'conjecture',
+		],
+		'corollary' => [
+			'title' => 'Důsledek',
+			'class' => 'corollary',
+		],
 		'definition' => [
 			'title' => 'Definice',
 			'class' => 'definition',
+		],
+		'example' => [
+			'title' => 'Příklad',
+			'class' => 'example',
+		],
+		'lemma' => [
+			'title' => 'Lemma',
+			'class' => 'lemma',
+		],
+		'notation' => [
+			'title' => 'Označení',
+			'class' => 'notation',
+		],
+		'proof' => [
+			'title' => 'Důkaz',
+			'class' => 'proof',
+		],
+		'proposition' => [
+			'title' => 'Tvrzení',
+			'class' => 'proposition',
+		],
+		'remark' => [
+			'title' => 'Poznámka',
+			'class' => 'remark',
+		],
+		'result' => [
+			'title' => 'Výsledek',
+			'class' => 'result',
 		],
 		'theorem' => [
 			'title' => 'Věta',

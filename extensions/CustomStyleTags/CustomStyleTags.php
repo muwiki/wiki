@@ -1,6 +1,7 @@
 <?php
 
-use Nette\Utils\Html;
+use Nette\Utils\Html as NHtml;
+use \Nette\Utils\Strings as NStrings;
 
 if (!defined('MEDIAWIKI')) {
 	die('This is a mediawiki extensions and can\'t be run from the command line.');
@@ -66,6 +67,7 @@ class CustomStyleTags
 
 	public static $attrWhitelist = [
 		'title' => true,
+		'id' => true,
 	];
 
 	public static function parserFirstCallInit(Parser $parser)
@@ -82,18 +84,25 @@ class CustomStyleTags
 	private static function buildTag($text, array $params, array $meta, Parser $parser, PPFrame $frame)
 	{
 		// create base tag
-		$el = Html::el((!empty($meta['tag']) ? $meta['tag'] : 'div'))
+		$el = NHtml::el((!empty($meta['tag']) ? $meta['tag'] : 'div'))
 			->addAttributes(array_diff_key($meta, ['title' => false, 'tag' => false]))
 			->addAttributes(array_intersect_key($params, self::$attrWhitelist));
+
+		// custom id
+		$el->addAttributes([
+			'id' => array_key_exists('id', $el->attrs)
+				? sprintf('cst-%s-%s', $el->getName(), NStrings::webalize($el->attrs['id']))
+				: false
+		]);
 
 		// process title line
 		$title = array_key_exists('title', $el->attrs) ? $el->attrs['title'] : $meta['title'];
 		unset($el->attrs['title']);
-		$el->add(Html::el('div', ['class' => 'title'])->setText($title));
+		$el->add(NHtml::el('div', ['class' => 'title'])->setText($title));
 
 		// process content
 		$text = $parser->recursiveTagParse($text, $frame);
-		$el->add(Html::el('div', ['class' => 'content'])->setHtml(trim($text)));
+		$el->add(NHtml::el('div', ['class' => 'content'])->setHtml(trim($text)));
 
 		// render
 		return (string) $el->addClass('customTag');

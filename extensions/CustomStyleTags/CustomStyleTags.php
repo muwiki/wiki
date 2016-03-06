@@ -98,11 +98,11 @@ class CustomStyleTags
 		// process title line
 		$title = array_key_exists('title', $el->attrs) ? $el->attrs['title'] : $meta['title'];
 		unset($el->attrs['title']);
-		$el->add(NHtml::el('div', ['class' => 'title'])->setText($title));
+		$el->add(NHtml::el('span', ['class' => 'title'])->setText($title));
 
 		// process content
 		$text = $parser->recursiveTagParse($text, $frame);
-		$el->add(NHtml::el('div', ['class' => 'content'])->setHtml(trim($text)));
+		$el->add(NHtml::el('span', ['class' => 'content'])->setHtml(trim($text)));
 
 		// render
 		return (string) $el->addClass('customTag');

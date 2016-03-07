@@ -55,8 +55,4 @@ call_user_func(function () {
     $GLOBALS['monologLogger'] = $logger;
     $GLOBALS['httpRequest'] = $httpRequest;
     $GLOBALS['IP'] = __DIR__;
-
-    if (!headers_sent()) {
-        header('X-XSS-Protection: 0');
-    }
 });

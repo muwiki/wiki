@@ -106,7 +106,7 @@ class CustomStyleTags
 
 		// process content
 		$text = $parser->recursiveTagParse($text, $frame);
-		$el->add(NHtml::el('span', ['class' => 'content'])->setHtml(trim($text)));
+		$el->add(NHtml::el('span', ['class' => 'content'])->setHtml($text));
 
 		// render
 		return (string) $el->addClass('customTag');

@@ -29,6 +29,7 @@ MathJax.Hub.Config({
 			Alpha: '\\unicode{x391}', /* FIXME: These capital Greeks don't show up in bold in \boldsymbol ... */
 			C: '\\mathbb{C}', /* the complex numbers */
 			CC: '\\mathbb{C}',
+			I: '\\mathbb{I}',
 			N: '\\mathbb{N}', /* the natural numbers */
 			NN: '\\mathbb{N}',
 			Q: '\\mathbb{Q}', /* the rational numbers */

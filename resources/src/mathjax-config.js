@@ -11,8 +11,8 @@ MathJax.Hub.Config({
 	displayAlign: 'left',
 	displayIndent: 0.02, // percents
 	tex2jax: {
-		inlineMath: [['$', '$'], ["\\(", "\\)"]],
-		displayMath: [['$$', '$$'], ["\\[", "\\]"]],
+		inlineMath: [],
+		displayMath: [],
 		processEscapes: true,
 		element: "content",
 		ignoreClass: "(tex2jax_ignore|mw-search-results|searchresults)", /* note: this is part of a regex, check the docs! */

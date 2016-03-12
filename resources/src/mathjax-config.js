@@ -175,5 +175,4 @@ MathJax.Hub.Config({
 	}
 });
 
-MathJax.Ajax.loadComplete("/resources/src/mathjax-config.js");
 //]]>

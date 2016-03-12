@@ -21,7 +21,9 @@ MathJax.Hub.Config({
 	},
 	TeX: {
 		equationNumbers: {autoNumber: "AMS"},
-		extensions: [],
+		extensions: [
+			"autoload-all.js"
+		],
 		Macros: {
 			/* Wikipedia compatibility: these macros are used on Wikipedia */
 			empty: '\\emptyset',

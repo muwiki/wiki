@@ -107,7 +107,6 @@ MathJax.Hub.Config({
 			Funct: '\\mathop{\\mathrm{Funct}}\\nolimits',
 			Cl: '\\mathop{\\mathrm{Cl}}\\nolimits',
 			CCl: '\\mathop{\\C\\mathrm{l}}\\nolimits',
-			cl: '\\mathop{\\mathrm{cl}}\\nolimits',
 			Ad: '\\mathop{\\mathrm{Ad}}\\nolimits',
 			ad: '\\mathop{\\mathrm{ad}}\\nolimits',
 			modd: '\\mathop{\\,\\mathrm{mod}}\\nolimits',
@@ -120,9 +119,7 @@ MathJax.Hub.Config({
 			codim: '\\mathop{\\mathrm{codim}}\\nolimits',
 			coker: '\\mathop{\\mathrm{coker}}\\nolimits',
 			Div: '\\mathop{\\mathrm{Div}}\\nolimits',
-			index: '\\mathop{\\mathrm{index}}\\nolimits',
 			D: '\\mathop{\\mathrm{D}}\\nolimits', // quotient of Div by the equivalence
-			cl: '\\mathop{\\mathrm{cl}}\\nolimits', // element of D(X) EGA Iv, 21.2.10
 			cyc: '\\mathop{\\mathrm{cyc}}\\nolimits', // cycle EGA IV, 21.6.5.1
 			grad: '\\mathop{\\mathrm{grad}}\\nolimits',
 			div: '\\mathop{\\mathrm{div}}\\nolimits',
@@ -130,7 +127,6 @@ MathJax.Hub.Config({
 			ht: '\\mathop{\\mathrm{ht}}\\nolimits',
 			Hom: '\\mathop{\\mathrm{Hom}}\\nolimits',
 			coht: '\\mathop{\\mathrm{coht}}\\nolimits',
-			Jac: '\\mathop{\\mathrm{Jac}}\\nolimits',
 			Idinv: '\\mathop{\\mathrm{Id.inv}}\\nolimits', //invertible fractional ideal
 			length: '\\mathop{\\mathrm{length}}\\nolimits',
 			mult: '\\mathop{\\mathrm{mult}}\\nolimits',
@@ -170,7 +166,15 @@ MathJax.Hub.Config({
 			corr: '\\mathop{\\mathrm{corr}}\\nolimits',
 			E: '\\mathop{\\mathrm{E}}\\nolimits',          /* Expected Value */
 
-			arccot: '{\\rm arccot\\,}'
+			st: '\\mathop{\\textrm{st}}\\nolimits',
+			sgn: '\\mathop{\\textrm{sgn}}\\nolimits',
+			tg: '\\mathop{\\textrm{tg}}\\nolimits',
+			cotg: '\\mathop{\\textrm{cotg}}\\nolimits',
+			arctg: '\\mathop{\\textrm{arctg}}\\nolimits',
+			arccot: '\\mathop{\\textrm{arccot}}\\nolimits',
+			arccotg: '\\mathop{\\textrm{arccotg}}\\nolimits',
+			Gr: '\\mathop{\\textrm{Gr}}\\nolimits',
+			Eigen: '\\mathop{\\textrm{Eigen}}\\nolimits'
 		}
 	}
 });

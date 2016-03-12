@@ -64,6 +64,8 @@ MathJax.Hub.Config({
 			/* example from MathJax on how to define macros with parameters: */
 			/* bold: ['{\\bf #1}', 1] */
 
+			ul: '\\underline',
+
 			td: '{\\text{-}}',
 			dd: '\\mathop{\\,\\mathrm{d}}\\nolimits',
 

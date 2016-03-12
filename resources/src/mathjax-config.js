@@ -166,6 +166,7 @@ MathJax.Hub.Config({
 			corr: '\\mathop{\\mathrm{corr}}\\nolimits',
 			E: '\\mathop{\\mathrm{E}}\\nolimits',          /* Expected Value */
 
+			e: '\\mathop{\\textrm{e}}\\nolimits',
 			st: '\\mathop{\\textrm{st}}\\nolimits',
 			sgn: '\\mathop{\\textrm{sgn}}\\nolimits',
 			tg: '\\mathop{\\textrm{tg}}\\nolimits',

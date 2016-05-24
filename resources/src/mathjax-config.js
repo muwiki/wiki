@@ -48,6 +48,7 @@ MathJax.Hub.Config({
 			F: '\\mathbb{F}', /* a finite field */
 			FF: '\\mathbb{F}',
 			HH: '\\mathcal{H}', /* a Hilbert space */
+			bigO: '\\mathcal{O}',
 			bszero: '\\boldsymbol{0}', /* vector of zeros */
 			bsone: '\\boldsymbol{1}', /* vector of ones */
 			bst: '\\boldsymbol{t}', /* a vector 't' */

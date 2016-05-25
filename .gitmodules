@@ -19,3 +19,6 @@
 [submodule "extensions/Cite"]
 	path = extensions/Cite
 	url = git@github.com:muwiki/mediawiki-extensions-Cite.git
+[submodule "extensions/SyntaxHighlight"]
+	path = extensions/SyntaxHighlight
+	url = git@github.com:muwiki/mediawiki-extensions-SyntaxHighlight_GeSHi.git

@@ -181,6 +181,8 @@ require_once __DIR__ . '/../extensions/GraphViz/GraphViz.php';
 
 wfLoadExtension('Cite');
 
+$wgPygmentizePath = 'pygmentize';
+wfLoadExtension('SyntaxHighlight');
 
 $wgObjectCaches['apcu'] = ['class' => 'APCuBagOStuff'];
 $wgMainCacheType = 'apcu';

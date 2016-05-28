@@ -42,7 +42,7 @@ MathJax.Hub.Config({
 			ZZ: '\\mathbb{Z}',
 			H: '\\mathbb{H}', /* the quoternionic numbers */
 
-			defn: '\\overset{\\mathrm{def}}{=}',
+			defn: '\\overset{\\mathrm{def.}}{=}',
 			compl: ['\\textrm{co-}\\!#1', 1],
 
 			/* some extre macros for ease of use; these are non-standard! */

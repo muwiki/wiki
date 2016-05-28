@@ -49,7 +49,7 @@ foreach (['view', 'edit', 'watch', 'unwatch', 'delete', 'revert', 'rollback', 'p
 $wgArticlePath = $wgActionPaths['view'];
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = $httpRequest->getUrl()->getHostUrl();
+$wgServer = '//' . $httpRequest->getUrl()->getAuthority();
 $wgSecureLogin = $httpRequest->isSecured();
 
 ## The URL path to static resources (images, scripts, etc.)

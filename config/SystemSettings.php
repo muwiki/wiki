@@ -71,6 +71,8 @@ $wgEnotifUserTalk = true; # UPO
 $wgEnotifWatchlist = true; # UPO
 $wgEmailAuthentication = true;
 
+$wgEmailConfirmToEdit = true; # require confirmed email to edit and to register
+
 ## To enable image uploads, make sure the 'images' directory
 ## is writable, then set this to true:
 $wgEnableUploads = true;

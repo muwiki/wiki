@@ -43,6 +43,7 @@ MathJax.Hub.Config({
 			H: '\\mathbb{H}', /* the quoternionic numbers */
 
 			defn: '\\overset{\\mathrm{def}}{=}',
+			compl: ['\\textrm{co-}\\!#1', 1],
 
 			/* some extre macros for ease of use; these are non-standard! */
 			F: '\\mathbb{F}', /* a finite field */

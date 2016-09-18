@@ -91,6 +91,12 @@ $wgGroupPermissions['sysop']['upload'] = true;
 $wgGroupPermissions['sysop']['reupload'] = true;
 $wgGroupPermissions['sysop']['reupload-shared'] = true;
 
+# Disable reading by anonymous users
+$wgGroupPermissions['*']['read'] = false;
+
+# Disable anonymous editing
+$wgGroupPermissions['*']['edit'] = false;
+
 # InstantCommons allows wiki to use images from https://commons.wikimedia.org
 $wgUseInstantCommons = false;
 
